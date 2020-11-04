@@ -32,6 +32,7 @@ Vue.use(Resource)
 ```
 
 ## 百度富文本框的使用(此处已下载在static文件夹中)
+npm i vue-ueditor-wrap//安装需要文件
 ```
 首先在main.js中注册
 import VueUeditorWrap from 'vue-ueditor-wrap'
