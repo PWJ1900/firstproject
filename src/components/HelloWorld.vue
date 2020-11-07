@@ -31,6 +31,7 @@
           <el-menu-item index="2-6" @click="People_detail_simples" style="color:#aab2c3;">个人详情简介</el-menu-item>
           <el-menu-item index="2-7" @click="People_educations" style="color:#aab2c3;">个人文化水平</el-menu-item>
           <el-menu-item index="2-8" @click="Peoplesue" style="color:#aab2c3;">个人</el-menu-item>
+          <el-menu-item index="2-8" @click="Projectuse" style="color:#aab2c3;">项目信息表</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <!-- <el-submenu index="3">
@@ -135,6 +136,9 @@
       <div v-if="peopleuse">
         <Peoples></Peoples>
       </div>
+      <div v-if="projectuse">
+      <Projectachieve></Projectachieve>
+      </div>
       
       <div v-if="ishow">
       <demo></demo>
@@ -178,6 +182,7 @@ import Index_introductions from '@/components/Index_introductions.vue'
 import People_detail_simples from '@/components/People_detail_simples.vue'
 import People_educations from '@/components/People_educations.vue'
 import Peoples from '@/components/Peoplese.vue'
+import Projectachieve from '@/components/project_achieve'
 
 
 
@@ -207,7 +212,8 @@ import Peoples from '@/components/Peoplese.vue'
       detail_simples:false,
       educations:false,
       peopleuse:false,
-      arshow:false
+      arshow:false,
+      projectuse:false
 
 
 
@@ -223,12 +229,27 @@ import Peoples from '@/components/Peoplese.vue'
      Index_introductions,
      People_detail_simples,
      People_educations,
-     Peoples
+     Peoples,
+     Projectachieve
 
 
 
     },
     methods:{
+      Projectuse(){
+        this.acshow = false
+        this.arshow = false
+        this.inpeople = false
+        this.slider = false
+        this.intro = false
+        this.detail_simples = false
+        this.educations = false
+        this.peopleuse = false
+        this.ishow = false
+        this.projectuse = true
+
+
+      },
       change(){
         this.acshow = false
         this.arshow = false
@@ -238,6 +259,7 @@ import Peoples from '@/components/Peoplese.vue'
         this.detail_simples = false
         this.educations = false
         this.peopleuse = false
+        this.projectuse = false
         this.ishow = true
         
 
@@ -287,6 +309,7 @@ import Peoples from '@/components/Peoplese.vue'
         this.educations = false
         this.peopleuse = false
         this.ishow = false
+        this.projectuse = false
 
 
       },
@@ -300,6 +323,7 @@ import Peoples from '@/components/Peoplese.vue'
         this.educations = false
         this.peopleuse = false
         this.ishow = false
+        this.projectuse = false
 
       },
       Index_introductions(){
@@ -312,6 +336,7 @@ import Peoples from '@/components/Peoplese.vue'
         this.educations = false
         this.peopleuse = false
         this.ishow = false
+        this.projectuse = false
 
       },
       Index_peoples(){
@@ -324,6 +349,7 @@ import Peoples from '@/components/Peoplese.vue'
         this.educations = false
         this.peopleuse = false
         this.ishow = false
+        this.projectuse =false
 
       },
       Index_sliders(){
@@ -336,6 +362,7 @@ import Peoples from '@/components/Peoplese.vue'
         this.educations = false
         this.peopleuse = false
         this.ishow = false
+        this.projectuse = false
 
       },
       People_detail_simples(){
@@ -348,6 +375,7 @@ import Peoples from '@/components/Peoplese.vue'
         this.educations = false
         this.peopleuse = false
         this.ishow = false
+        this.projectuse = false
 
       },
       People_educations(){
@@ -360,6 +388,7 @@ import Peoples from '@/components/Peoplese.vue'
         this.educations = true
         this.peopleuse = false
         this.ishow = false
+        this.projectuse = false
 
       },
       closeDialog(){
@@ -375,6 +404,7 @@ import Peoples from '@/components/Peoplese.vue'
         this.educations = false
         this.peopleuse = true
         this.ishow = false
+        this.projectuse = false
 
       },
       lookusername(){

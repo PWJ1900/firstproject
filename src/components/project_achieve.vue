@@ -11,27 +11,15 @@
     >
       <el-table-column fixed prop="pk" label="序号" width="150" align="center">
       </el-table-column>
-      <el-table-column prop="title" label="标题" width="150" align="center">
+      <el-table-column prop="orderID" label="排序号" width="150" align="center">
       </el-table-column>
-      <el-table-column prop="brief_content" label="摘要" width="120" align="center">
-        <template slot-scope="scope">
-            <span>{{scope.row.brief_content}}</span>
-        </template>
+       <el-table-column prop="projectname" label="项目名称" width="150" align="center">
       </el-table-column>
-      <el-table-column prop="content" label="内容" width="120" align="center">
-        
-        <template slot-scope="scope">
-          <span>{{scope.row.content}}</span>
-        </template>
+      <el-table-column prop="projecturl" label="项目链接" width="120" align="center">
       </el-table-column>
-
-      <el-table-column
-        prop="publish_date"
-        label="出版时间"
-        width="120"
-        :formatter="dateFormat"
-        align="center"
-      >
+      <el-table-column prop="direction" label="项目方向" width="120" align="center">
+      </el-table-column>
+      <el-table-column prop="peoplenum" label="项目人数" width="120" align="center">
       </el-table-column>
       <el-table-column align="right">
         <template slot="header">
@@ -70,23 +58,26 @@
         :model="addsForm"
         label-width="100px"
       >
-        <el-form-item label="标题:" prop="title">
-          <el-input v-model="addsForm.title" max-length="10"></el-input>
+        <el-form-item label="排序号:" prop="orderID">
+          <el-input v-model="addsForm.orderID" max-length="10"></el-input>
         </el-form-item>
-        <el-form-item label="摘要:" prop="brief_content">
-          <el-input v-model="addsForm.brief_content"></el-input>
+        <el-form-item label="项目名字:" prop="projectname">
+          <el-input v-model="addsForm.projectname"></el-input>
         </el-form-item>
-        <el-form-item label="内容:" prop="content">
+        <el-form-item label="项目链接:" prop="projecturl">
           <el-input
             type="textarea"
             :rows="4"
             placeholder="请输入内容"
-            v-model="addsForm.content"
+            v-model="addsForm.projecturl"
           >
           </el-input>
         </el-form-item>
-        <el-form-item label="出版时间:" prop="publish_date">
-          <el-input v-model="addsForm.publish_date"></el-input>
+        <el-form-item label="项目方向:" prop="direction">
+          <el-input v-model="addsForm.direction"></el-input>
+        </el-form-item>
+         <el-form-item label="项目人数:" prop="peoplenum">
+          <el-input v-model="addsForm.peoplenum"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="studentAdd()">确定</el-button>
@@ -102,37 +93,43 @@
     </el-dialog>
     <!-- 编辑 -->
     <el-dialog
-      title="编辑学生信息"
+      title="编辑项目信息"
       :visible="editstudentForm"
       size="tiny"
       :modal-append-to-body="false"
       @close="closeDialog"
     >
       <el-form ref="editsForm" :model="editsForm" label-width="80px">
-        <el-form-item label="标题:">
+        <el-form-item label="排序号:">
           <el-input
-            v-model="editsForm.title"
+            v-model="editsForm.orderID"
             max-length="10"
             disabled="disabled"
           ></el-input>
         </el-form-item>
-        <el-form-item label="摘要:">
+         <el-form-item label="项目名字:">
+          <el-input
+            v-model="editsForm.projectname"
+            max-length="10"
+          ></el-input>
+        </el-form-item>
+        <el-form-item label="项目链接:">
           <!-- <el-input v-model="editsForm.brief_content"></el-input> -->
            <el-input
             type="textarea"
             :rows="4"
-            placeholder="请输入内容"
-            v-model="editsForm.brief_content"
+            placeholder="项目链接"
+            v-model="editsForm.projecturl"
           >
           </el-input>
         </el-form-item>
-        <el-form-item label="文章内容:">
-            <el-input type="textarea" :rows="10"  v-model="editsForm.content"></el-input>
+        <el-form-item label="项目方向:">
+            <el-input type="textarea" :rows="10"  v-model="editsForm.direction"></el-input>
 
           <!-- <el-input v-model="editsForm.content"></el-input> -->
         </el-form-item>
-        <el-form-item label="出版时间">
-          <el-input v-model="editsForm.publish_date"></el-input>
+        <el-form-item label="项目人数">
+          <el-input v-model="editsForm.peoplenum"></el-input>
         </el-form-item>
 
         <el-form-item>
@@ -187,7 +184,7 @@ export default {
     //     // error callback
     //   }
     // );
-    Httpuse(this,"articleuse",1)
+    Httpuse(this,"project_vue",1)
     // this.tableData = a
   },
 
@@ -198,10 +195,11 @@ export default {
       publish_date:false,
       labelPosition: 'right',
         searchDatause: {
-         title: "",
-        brief_content: "",
-        content: "",
-        publish_date: "",
+         orderID: "",
+        projectname: "",
+        projecturl: "",
+        direction: "",
+        peoplenum: "",
         },
       deletetran : {},
       deleteuse:false,
@@ -217,17 +215,18 @@ export default {
       editstudentForm: false,
       dialogVisible: false,
       addsForm: {
-        title: "",
-        brief_content: "",
-        content: "",
-        publish_date: "",
+         orderID: "",
+        projectname: "",
+        projecturl: "",
+        direction: "",
+        peoplenum: "",
       },
       editsForm: {
-        pk:'',
-        title: "",
-        brief_content: "",
-        content: "",
-        publish_date: "",
+         orderID: "",
+        projectname: "",
+        projecturl: "",
+        direction: "",
+        peoplenum: "",
       },
     };
   },
@@ -251,7 +250,7 @@ export default {
     //     // error callback
     //   }
     // );
-    Httpuse(this,"articleuse",this.pagenumuse)
+    Httpuse(this,"project_vue",this.pagenumuse)
        
       },
     handleClose(done) {
@@ -261,19 +260,14 @@ export default {
         })
         .catch((_) => {});
     },
-    dateFormat(row, column) {
-      let date = row[column.property];
-      console.log(date);
-      let newDate = /\d{4}-\d{1,2}-\d{1,2}/g.exec(date);
-      return newDate;
-    },
     handleEdit(index, row) {
       this.editstudentForm = true;
       this.editsForm.pk = row.pk
-      this.editsForm.title = row.title; //此处写的使编辑框对应的数据显示
-      this.editsForm.brief_content = row.brief_content;
-      this.editsForm.content = row.content;
-      this.editsForm.publish_date = row.publish_date;
+      this.editsForm.orderID = row.orderID; //此处写的使编辑框对应的数据显示
+      this.editsForm.projectname = row.projectname;
+      this.editsForm.projecturl = row.projecturl;
+      this.editsForm.direction = row.direction;
+      this.editsForm.peoplenum = row.peoplenum;
       console.log(index, row);
     },
        handleClose2(done) {
@@ -284,9 +278,9 @@ export default {
           .catch(_ => {});
       },
       deleteju(){
-        this.$http.post(config.requesturl+"/articleuse", this.deletetran).then(
+        this.$http.post(config.requesturl+"/project_vue", this.deletetran).then(
         (response) => {
-        this.$http.get("http://127.0.0.1:8000/blog/articleuse",{params:{pageNum:this.pagenumuse}}).then(
+        this.$http.get("http://127.0.0.1:8000/blog/project_vue",{params:{pageNum:this.pagenumuse}}).then(
             (response) => {
               console.log(response);
               let a = response.data;
@@ -306,7 +300,6 @@ export default {
         
       },
     handleDelete(index, row) {
-      let change = row.title;
       this.deletetran["pk"] = row.pk;
       this.deletetran["num"] = "3";
 
@@ -330,9 +323,9 @@ export default {
     studentAdd() {
       let tran = this.addsForm;
       tran["num"] = 2; //2代表create
-      this.$http.post(config.requesturl+"/articleuse", tran).then(
+      this.$http.post(config.requesturl+"/project_vue", tran).then(
         (response) => {
-         Httpuse(this,"articleuse",this.pagenumuse)
+         Httpuse(this,"project_vue",this.pagenumuse)
         },
         (response) => {}
       );
@@ -341,7 +334,7 @@ export default {
     },
     searchinfo(datasearch){
       if(datasearch!=''){
-        this.$http.get(config.requesturl+"/articleuse",{params:{pageNum:''}}).then((response)=>{
+        this.$http.get(config.requesturl+"/project_vue",{params:{pageNum:''}}).then((response)=>{
           this.tableData = response.data 
           this.tableData = this.tableData.filter(data => !datasearch || data.title.toLowerCase().includes(datasearch.toLowerCase()) || data.publish_date.toLowerCase().includes(datasearch.toLowerCase())||data.content.toLowerCase().includes(datasearch.toLowerCase()) || data.brief_content.toLowerCase().includes(datasearch.toLowerCase()))},(response)=>{})
 
@@ -350,9 +343,9 @@ export default {
     studentcEdit() {
       let tran = this.editsForm;
       tran["num"] = "1";
-      this.$http.post(config.requesturl+"/articleuse", tran).then(
+      this.$http.post(config.requesturl+"/project_vue", tran).then(
         (response) => {
-          Httpuse(this,"articleuse",this.pagenumuse)
+          Httpuse(this,"project_vue",this.pagenumuse)
         },
         (response) => {}
       );
