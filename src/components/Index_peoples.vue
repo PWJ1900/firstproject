@@ -13,7 +13,12 @@
     border
     style="width: 100%"
      :header-cell-style="{background:'#eef1f6',color:'#606266'}">
-     <el-table-column fixed prop="pk" label="序号" width="150">
+     <el-table-column fixed prop="pk1" label="编号" width="150" align="center">
+        <template slot-scope="scope">
+          <span>{{ (pagenumuse - 1) * 5 + scope.$index + 1 }}</span>
+        </template>
+      </el-table-column>
+     <el-table-column fixed prop="pk" label="键号" width="150">
       </el-table-column>
     <el-table-column
       prop="people_pic"

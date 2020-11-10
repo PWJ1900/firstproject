@@ -393,6 +393,7 @@ import Projectachieve from '@/components/project_achieve'
       },
       closeDialog(){
         this.edituser = false
+        this.addFormstate = false
       },
       Peoplesue(){
         this.acshow = false

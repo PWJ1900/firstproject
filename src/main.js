@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'// 此处可以写路由拦截
+
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueResource from 'vue-resource'
