@@ -28,6 +28,13 @@ npm install --save vue-resource
 //下完后在main.js里面全局配置
 import Resource from 'vue-resource'
 Vue.use(Resource)
+
+vue-resource用法(封装的axios)
+this.$http.get(url,{params:{key:value}}).then((response)=>{},(response)=>{})
+this.$http.post(url,this.form).then((response)=>{},(response)=>{})
+this.$http.put(url,this.form).then((response)=>{},(response)=>{})
+this.$http.delete(url,this.form).then((response)=>{},(response)=>{})
+
 ```
 
 ## 百度富文本框的使用(此处已下载在static文件夹中)
