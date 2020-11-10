@@ -38,7 +38,7 @@
     </el-table-column>
       <el-table-column
       align="right">
-      <template slot="header" slot-scope="scope">
+      <template slot="header">
         <el-input
           v-model="search"
           size="mini"
@@ -244,7 +244,7 @@ import {Usebs4} from "@/components/utils/bs4use"
         const isLt2M = file.size / 1024 / 1024/ 1024 < 2
       if (isLt2M) {
         // uploadImgToBase64()返回一个Promise对象，通过.then()获取其数据。其data.resul是图片转成的base64值
-       Usebs4(file.raw).then(data => { this.addsForm.people_pic = data.result })
+       Usebs4(file.raw).then(data => { this.addsForm.people_pic = data.result })//data就是usebs4转化过的值
       } else {
         this.$message.error('上传封面图片大小不能超过 2GB!')
       }

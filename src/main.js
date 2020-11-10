@@ -12,11 +12,10 @@ Vue.component('vue-ueditor-wrap', VueUeditorWrap)
 
 
 
-
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VueResource)
-Vue.http.options.emulateJSON = true;//此处增加请求头，以便于后端获取
+Vue.http.options.emulateJSON = true;//此处增加请求头，以便于后端json获取
 
 // router.beforeEach((to, from,next)=>{
 //   if(to.meta.rerequireAuth){
