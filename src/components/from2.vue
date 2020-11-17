@@ -11,16 +11,13 @@
 
       <div id="sumachieve">
         <el-row>
-         
           <el-card class="box-card">
             <div slot="header" class="clearfix">
-               
               <span>个人信息:</span>
               <!-- <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button> -->
             </div>
-            
+
             <div class="text item">
-              
               <!-- <el-tag class="taguse">姓名:{{ peoplename }}</el-tag>
               <span style="width: 50px"></span><br />
               <el-tag class="taguse">主攻方向:{{ peoplesubject }}</el-tag>
@@ -35,19 +32,17 @@
                 </el-collapse-item>
                 <el-collapse-item title="主攻方向:" name="2">
                   <div>
-                   {{ peoplesubject }}
+                    {{ peoplesubject }}
                   </div>
                 </el-collapse-item>
                 <el-collapse-item title="个人履历:" name="3">
                   <el-scrollbar>
-                  <div v-html=" peopledesr" style="height:80px"></div>
-                   </el-scrollbar>
+                    <div v-html="peopledesr" style="height: 80px"></div>
+                  </el-scrollbar>
                 </el-collapse-item>
               </el-collapse>
             </div>
-            
           </el-card>
-         
         </el-row>
       </div>
       <h1>暂无查询信息</h1>
@@ -89,7 +84,7 @@
 export default {
   data() {
     return {
-      activeNames: ['1'],
+      activeNames: ["1"],
       showimage: false,
       circleUrl: "",
       identity: "",
@@ -154,8 +149,7 @@ export default {
         this.peoplesubject = "";
         this.peopledesr = "";
       }
-      this.activeNames = ['1','2','3']
-      
+      this.activeNames = ["1", "2", "3"];
     },
     handleClick(tab, event) {
       console.log(tab, event);

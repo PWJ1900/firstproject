@@ -1,7 +1,7 @@
 
 <template>
-<!-- 这里面给他设置如果身份为admin通过数据库获取来判断是否给admin则可以登录 -->
-<!-- 此处的ref相当于给dom取对象使用 -->
+  <!-- 这里面给他设置如果身份为admin通过数据库获取来判断是否给admin则可以登录 -->
+  <!-- 此处的ref相当于给dom取对象使用 -->
   <div id="login">
     <div class="loginToHome">
       <el-form
@@ -53,12 +53,12 @@
 <script>
 export default {
   data() {
-     this.$http.get("http://127.0.0.1:8000/blog/gerloginper").then(
+    this.$http.get("http://127.0.0.1:8000/blog/gerloginper").then(
       (response) => {
         console.log(response);
         let a = response.data;
-        this.uselogin = a
-        
+        this.uselogin = a;
+
         // success callback
       },
       (response) => {
@@ -67,9 +67,9 @@ export default {
     );
 
     return {
-      uselogin:[{}],
+      uselogin: [{}],
       logining: false,
-      judge:false,
+      judge: false,
 
       form: {
         name: "",
@@ -90,34 +90,32 @@ export default {
       this.$refs.form.validate((valid) => {
         if (valid) {
           this.logining = true;
-         
-         this.uselogin.forEach(element => {
-           if(this.form.name === element['number'] && this.form.password === element['password']){
-             this.logining = false;
 
-            sessionStorage.setItem("user", "admin");
-            sessionStorage.setItem("username", element['name'])
-            this.$router.push({ name: "Helloworld" ,params:{userId:1}});//搞懂这个params怎么用
-            judge = true
+          this.uselogin.forEach((element) => {
+            if (
+              this.form.name === element["number"] &&
+              this.form.password === element["password"]
+            ) {
+              this.logining = false;
 
-           }
-           
-
-           
-         });
-         if(this.judge === false){
+              sessionStorage.setItem("user", "admin");
+              sessionStorage.setItem("username", element["name"]);
+              this.$router.push({ name: "Helloworld", params: { userId: 1 } }); //搞懂这个params怎么用
+              judge = true;
+            }
+          });
+          if (this.judge === false) {
             this.logining = false;
-           this.$alert("姓名或者密码错误!", "提醒", {
+            this.$alert("姓名或者密码错误!", "提醒", {
               confirmButtonText: "ok",
-             
             });
-         }
+          }
           // if (this.form.name === "admin" && this.form.password === "123456") {
           //   this.logining = false;
 
           //   sessionStorage.setItem("user", "admin");
           //   this.$router.push({ name: "Helloworld" ,params:{userId:1}});//搞懂这个params怎么用
-            
+
           // } else {
           //   this.logining = false;
 
@@ -134,7 +132,7 @@ export default {
     },
 
     resetForm() {
-      this.$refs.form.resetFields();//这里的refs使用的是组件属性对象
+      this.$refs.form.resetFields(); //这里的refs使用的是组件属性对象
     },
   },
 };
