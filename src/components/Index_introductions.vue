@@ -47,30 +47,6 @@
         </template>
       </el-table-column>
     </el-table>
-    <!-- 新增 -->
-    <!-- <el-dialog title="新增实验室介绍信息" :visible="addstudentForm" v-show="shownow" size="tiny" :modal-append-to-body='false' @close='closeDialog'> -->
-    <!-- <el-form id="#addsForm" ref="addsForm" :model="addsForm" label-width="80px">
-     <el-form-item label="介绍:" prop="introduction">
-       <el-input  type="textarea" :rows="6" v-model="addsForm.introduction" max-length="10"></el-input>
-     </el-form-item>
-     <el-form-item>
-       <el-button type="primary" @click="studentAdd()">确定</el-button>
-       <el-button @click="addstudentForm = false;canceladdT('formt')">取消</el-button>
-     </el-form-item>
-   </el-form>
- </el-dialog> -->
-    <!-- 编辑 -->
-    <!-- <el-dialog title="编辑实验室介绍信息" :visible="editstudentForm" v-show="shownow" size="tiny" :modal-append-to-body='false' @close='closeDialog'>
-   <el-form ref="editsForm" :model="editsForm" label-width="80px">
-     <el-form-item label="介绍">
-       <el-input type="textarea" :rows="6" v-model="editsForm.introduction" max-length="10"></el-input>
-     </el-form-item>
-     <el-form-item>
-      <el-button type="primary" @click="studentcEdit()">确定</el-button>
-       <el-button @click="editstudentForm = false">取消</el-button>
-     </el-form-item>
-   </el-form>
- </el-dialog> -->
     <el-dialog
       title="提示"
       :visible.sync="deleteuse"
@@ -105,7 +81,7 @@
       ></vue-ueditor-wrap>
 
       <!-- <el-input type="textarea" :rows="100" v-model="addsForm.introduction" max-length="10"></el-input> -->
-      -->
+
     </el-col>
     <el-col v-show="shownow2"
       ><el-button type="success" @click="studentcEdit()"
