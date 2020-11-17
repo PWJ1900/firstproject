@@ -303,7 +303,7 @@ export default {
 
       const isLt2M = file.size / 1024 / 1024 / 1024 < 2;
       if (isLt2M) {
-        // uploadImgToBase64()返回一个Promise对象，通过.then()获取其数据。其中data.result是图片转成的base64值
+        // uploadImgToBase64()返回一个Promise对象执行微任务，通过.then()获取其数据。其中data.result是图片转成的base64值
         Usebs4(file.raw).then((data) => {
           this.addsForm.pic = data.result;
         });
