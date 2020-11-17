@@ -61,6 +61,10 @@ components: { VueUeditorWrap }注册
  <vue-ueditor-wrap v-model="addsForm.introduction" :config="myConfig"></vue-ueditor-wrap>直接使用组件注册
 
 ```
+
+1、组件注册用法
+2、http请求用法
+3、分页，图片保存上传
 ## Build Setup
 
 ``` bash

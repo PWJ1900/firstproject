@@ -207,16 +207,6 @@ import {Httpuse} from "@/components/api/httpuseget"
     },
 
    data() {
-//        this.$http.get('http://127.0.0.1:8000/blog/achievementvue',{params:{pageNum:1}}).then(response => {
-//         console.log(response)
-//         let a = response.data
-//         console.log(a)
-//         this.totalget = response.data[0]['count']
-//         this.tableData = a
-//   // success callback
-//  }, response => {
-//   // error callback
-//  })
     
       return {
         totalget:0,

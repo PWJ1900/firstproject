@@ -1,5 +1,4 @@
 function Httpuse(the,title,pageuse){
-  let a = the
     the.$http.get( "http://127.0.0.1:8000/blog"+"/" + title,{params:{pageNum:pageuse}}).then(
         (response) => {
           console.log(response);
