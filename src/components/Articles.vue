@@ -180,21 +180,8 @@ export default {
     },
   },
   created(){
-    //  this.$http.get( config.requesturl+"/articleuse",{params:{pageNum:1}}).then(
-    //   (response) => {
-    //     console.log(response);
-    //     let a = response.data;
-    //     console.log(a);
-    //     this.totalget = response.data[0]['count']
-    //     this.tableData = a;
-    //     // success callback
-    //   },
-    //   (response) => {
-    //     // error callback
-    //   }
-    // );
+
     Httpuse(this,"articleuse",1)
-    // this.tableData = a
   },
 
   data() {
