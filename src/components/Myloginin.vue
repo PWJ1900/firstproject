@@ -101,7 +101,7 @@ export default {
               sessionStorage.setItem("user", "admin");
               sessionStorage.setItem("username", element["name"]);
               this.$router.push({ name: "Helloworld", params: { userId: 1 } }); //搞懂这个params怎么用
-              judge = true;
+              this.judge = true;
             }
           });
           if (this.judge === false) {

@@ -18,7 +18,7 @@
           <span>{{ (pagenumuse - 1) * 5 + scope.$index + 1 }}</span>
         </template>
       </el-table-column>
-      <el-table-column fixed prop="pk" label="键号" width="150">
+      <el-table-column fixed prop="pk" label="键号" width="150" v-if="false">
       </el-table-column>
       <el-table-column prop="people_pic" label="people_pic" width="150">
         <template slot-scope="scope">

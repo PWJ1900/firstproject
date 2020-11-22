@@ -16,7 +16,7 @@
           <span>{{ (pagenumuse - 1) * 5 + scope.$index + 1 }}</span>
         </template>
       </el-table-column>
-      <el-table-column fixed prop="pk" label="键号" width="150" align="center">
+      <el-table-column fixed prop="pk" label="键号" width="150" align="center" v-if="false">
       </el-table-column>
       <el-table-column prop="orderID" label="排序号" width="150" align="center">
       </el-table-column>

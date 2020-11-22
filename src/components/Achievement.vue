@@ -16,6 +16,7 @@
       <el-table-column
       prop="orderID"
       label="orderID"
+      v-if="false"
       width="80">
     </el-table-column>
     <el-table-column

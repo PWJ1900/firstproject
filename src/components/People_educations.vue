@@ -18,7 +18,7 @@
         </template>
       </el-table-column>
 
-      <el-table-column fixed prop="pk" label="键号" width="150">
+      <el-table-column fixed prop="pk" label="键号" width="150" v-if="false">
       </el-table-column>
       <el-table-column prop="time" label="年份" width="150"> </el-table-column>
       <el-table-column prop="education" label="教育" width="120">

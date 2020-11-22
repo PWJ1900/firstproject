@@ -18,7 +18,7 @@
           <span>{{ (pagenumuse - 1) * 5 + scope.$index + 1 }}</span>
         </template>
       </el-table-column>
-      <el-table-column fixed prop="pk" label="键号" width="150">
+      <el-table-column fixed prop="pk" label="键号" width="150" v-if="false">
       </el-table-column>
       <el-table-column prop="introduction" label="介绍" width="400">
         <template slot-scope="scope">
@@ -131,7 +131,7 @@ export default {
       //   },
       /* ueditor */
       myConfig: {
-        // serverUrl: `${__GATEWAYPATH__}/ueditor/ueditorConfig`, // 上传功能的后端服务器接口地址
+        serverUrl: "http://127.0.0.1:8000/blog/introduceuseued", // 上传功能的后端服务器接口地址
         UEDITOR_HOME_URL: "../../static/UEditor/", // 你的UEditor资源存放的路径,相对于打包后的index.html
         autoHeightEnabled: true, // 编辑器是否自动被内容撑高
         autoFloatEnabled: false, // 工具栏是否可以浮动

@@ -60,6 +60,9 @@ components: { VueUeditorWrap }注册
  对应的前端代码这里尤其需要注意UEDITOR_HOME_URL与UEditor的位置相对应
  <vue-ueditor-wrap v-model="addsForm.introduction" :config="myConfig"></vue-ueditor-wrap>直接使用组件注册
 
+
+ 对于百度富文本图片上传的方法：
+
 ```
 
 1、组件注册用法
