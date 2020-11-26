@@ -131,7 +131,7 @@ export default {
       //   },
       /* ueditor */
       myConfig: {
-        serverUrl: "http://127.0.0.1:8000/blog/introduceuseued", // 上传功能的后端服务器接口地址
+        // serverUrl: "http://127.0.0.1:8000/blog/controller", // 上传功能的后端服务器接口地址
         UEDITOR_HOME_URL: "../../static/UEditor/", // 你的UEditor资源存放的路径,相对于打包后的index.html
         autoHeightEnabled: true, // 编辑器是否自动被内容撑高
         autoFloatEnabled: false, // 工具栏是否可以浮动
