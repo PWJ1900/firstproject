@@ -78,7 +78,7 @@
                   index="2-5"
                   @click="Index_sliders"
                   style="color: #aab2c3"
-                  >Index_sliders</el-menu-item
+                  >轮播图片</el-menu-item
                 >
                 <el-menu-item
                   index="2-6"
