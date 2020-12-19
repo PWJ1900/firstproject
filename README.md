@@ -18,7 +18,7 @@ vue init webpack project或vue init webpack
 ```
 npm i element-ui -S
 //下完后在main.js里面配置
-import ElementUi from 'elemet-ui'
+import ElementUi from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUi)
 ```
